@@ -1,0 +1,5 @@
+# Certificates
+*.pem
+
+# node.js modules folder
+node_modules
