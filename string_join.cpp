@@ -24,10 +24,12 @@ ostream & operator<<(ostream & out, const Foo & o) {
 /*
     Join an array into a string.
 */
-template <typename T, size_t size>
-string join(const string separator, T (&list)[size])
+template <typename T>
+string join(const string separator, T& list)
 {
     stringstream s;
+
+    int size = sizeof(list) / sizeof(*list);
 
     for (int i = 0; i < size; ++i)
     {
@@ -47,6 +49,9 @@ int main()
     // Examples
     string s [] = { "a", "b", "c" };
     cout << "join(\", \", { \"a\", \"b\", \"c\" }: " << join(", ", s) << endl;
+
+    string s1 [] = { };
+    cout << "join(\", \", { }: " << join(", ", s1) << endl;
 
     char c [] = { 'a', 'b', 'c' };
     cout << "join(\", \", { 'a', 'b', 'c' }): " << join(", ", c) << endl;
