@@ -42,7 +42,7 @@ string join(const string separator, T (&list)[size])
     return s.str();
 }
 
-int main(int argc, char* argv[])
+int main()
 {
     // Examples
     string s [] = { "a", "b", "c" };
